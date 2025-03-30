@@ -1,5 +1,8 @@
+"use client";
+
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Upload, Shirt, Eye } from "lucide-react"
+import { OutfitSwapCard } from "@/components/home/OutfitSwapCard";
 
 export default function Home() {
   return (
@@ -27,8 +30,38 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Features Section */}
+        <section className="py-16 px-4 bg-slate-50">
+          <div className="container mx-auto max-w-5xl">
+            <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">Our Features</h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <OutfitSwapCard />
+              
+              <Card className="overflow-hidden">
+                <CardContent className="p-6">
+                  <div className="flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 mb-4">
+                    <Eye className="h-6 w-6 text-primary" />
+                  </div>
+                  
+                  <h3 className="text-xl font-semibold mb-2">Image Generator</h3>
+                  
+                  <p className="text-muted-foreground mb-6">
+                    Create stunning AI-generated images from text descriptions.
+                    Just describe what you want to see, and our AI will bring it to life.
+                  </p>
+                  
+                  <Button className="w-full">
+                    Coming Soon
+                  </Button>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
         {/* How It Works Section */}
-        <section className="py-20 bg-slate-50 px-4">
+        <section className="py-20 px-4">
           <div className="container mx-auto max-w-5xl">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">How It Works</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
@@ -60,7 +93,7 @@ export default function Home() {
         </section>
 
         {/* Key Features Section */}
-        <section className="py-20 px-4">
+        <section className="py-20 px-4 bg-slate-50">
           <div className="container mx-auto max-w-5xl">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">Key Features</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-8 max-w-3xl mx-auto">
@@ -110,3 +143,4 @@ export default function Home() {
   )
 }
 
+import { Card, CardContent } from "@/components/ui/card";
